@@ -1,0 +1,293 @@
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.45it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.69it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.60it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: not found
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x3dde8190
+  Capture:  0x41744c00
+  Transfer: 0x41744d70
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.6s, ETA: 23.2s)
+[Generator] Progress: 100/150 (23.1s, ETA: 11.5s)
+[Generator] Progress: 150/150 (34.6s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.6s)
+[Generator] Ready! Graph generator enabled!
+
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 213, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 184, in main
+    total_ms, tps, text = generate_tokens(args.model_name, args.input_text, args.max_new_tokens)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 115, in generate_tokens
+    raise RuntimeError(f"custom_generate failed: {gresp.get('error')}")
+RuntimeError: custom_generate failed: custom graph not captured or KV not initialized
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.29it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.43it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.67it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.58it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: not found
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x1b3ddea0
+  Capture:  0x1ecfb480
+  Transfer: 0x1ed16510
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.7s, ETA: 23.5s)
+[Generator] Progress: 100/150 (23.3s, ETA: 11.7s)
+[Generator] Progress: 150/150 (34.9s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.9s)
+[Generator] Ready! Graph generator enabled!
+
+[Generator] Custom module import failed: /home/azureuser/divakar_projects/cuda_graph_sharing/case6/custom_decode/build/lib.linux-x86_64-cpython-312/custom_decode_step.cpython-312-x86_64-linux-gnu.so: undefined symbol: _ZNK3c1011StorageImpl27throw_data_ptr_access_errorEv
+[Generator] Custom capture failed: custom_decode_step not available
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 213, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 184, in main
+    total_ms, tps, text = generate_tokens(args.model_name, args.input_text, args.max_new_tokens)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 115, in generate_tokens
+    raise RuntimeError(f"custom_generate failed: {gresp.get('error')}")
+RuntimeError: custom_generate failed: custom graph not captured or KV not initialized
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.44it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.56it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x16ad1380
+  Capture:  0x18b0bc80
+  Transfer: 0x1a4240c0
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.7s, ETA: 23.4s)
+[Generator] Progress: 100/150 (23.4s, ETA: 11.7s)
+[Generator] Progress: 150/150 (34.7s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.7s)
+[Generator] Ready! Graph generator enabled!
+
+[Generator] Custom capture failed: CUDA error: operation failed due to a previous error during capture
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 213, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 184, in main
+    total_ms, tps, text = generate_tokens(args.model_name, args.input_text, args.max_new_tokens)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 115, in generate_tokens
+    raise RuntimeError(f"custom_generate failed: {gresp.get('error')}")
+RuntimeError: custom_generate failed: custom graph not captured or KV not initialized
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.41it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.49it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.74it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.65it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x2521f5a0
+  Capture:  0x28b79ab0
+  Transfer: 0x275914a0
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.5s, ETA: 23.0s)
+[Generator] Progress: 100/150 (23.0s, ETA: 11.5s)
+[Generator] Progress: 150/150 (34.7s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.7s)
+[Generator] Ready! Graph generator enabled!
+
+/home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/cuda/graphs.py:84: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at ../aten/src/ATen/cuda/CUDAGraph.cpp:208.)
+  super().capture_end()
+[Generator] Custom decode graph captured for session s1 at seq_len=7
+[JIT Client] Stopping...
+[JIT Client] Stopped
+================================================================================
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 213, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 187, in main
+    print("CASE 4 (" + ("Custom decode graph" if use_custom else "CUDA Graphs + JIT IPC") + "): generation timing")
+                                                 ^^^^^^^^^^
+NameError: name 'use_custom' is not defined
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.27it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.36it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.54it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x267a38d0
+  Capture:  0x27db34b0
+  Transfer: 0x27daad80
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.7s, ETA: 23.5s)
+[Generator] Progress: 100/150 (23.3s, ETA: 11.6s)
+[Generator] Progress: 150/150 (34.8s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.8s)
+[Generator] Ready! Graph generator enabled!
+
+/home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/cuda/graphs.py:84: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at ../aten/src/ATen/cuda/CUDAGraph.cpp:208.)
+  super().capture_end()
+[Generator] Custom decode graph captured for session s1 at seq_len=7
+[JIT Client] Stopping...
+[JIT Client] Stopped
+================================================================================
+CASE 4 (Custom decode graph): generation timing
+================================================================================
+Total time for 5 token generation: 4.93 ms
+Tokens/sec: 1014.83
+--------------------------------------------------------------------------------
+Generated output:
+the future of artificial intelligence isografiaografiaografiaografiaografia
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.31it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.42it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.56it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x22fbfff0
+  Capture:  0x245ca8a0
+  Transfer: 0x22e22af0
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (12.0s, ETA: 24.0s)
+[Generator] Progress: 100/150 (23.8s, ETA: 11.9s)
+[Generator] Progress: 150/150 (35.7s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (35.7s)
+[Generator] Ready! Graph generator enabled!
+
+/home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/cuda/graphs.py:84: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at ../aten/src/ATen/cuda/CUDAGraph.cpp:208.)
+  super().capture_end()
+[Generator] Custom capture failed: module 'capture_decode_step' has no attribute 'decode_step'
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 213, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 184, in main
+    total_ms, tps, text = generate_tokens(args.model_name, args.input_text, args.max_new_tokens)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 115, in generate_tokens
+    raise RuntimeError(f"custom_generate failed: {gresp.get('error')}")
+RuntimeError: custom_generate failed: custom graph not captured or KV not initialized
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.35it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.47it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.71it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.62it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x3010ef30
+  Capture:  0x3171fd80
+  Transfer: 0x2ff08630
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.6s, ETA: 23.3s)
+[Generator] Progress: 100/150 (23.0s, ETA: 11.5s)
+[Generator] Progress: 150/150 (34.4s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.4s)
+[Generator] Ready! Graph generator enabled!
+
+/home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/cuda/graphs.py:84: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at ../aten/src/ATen/cuda/CUDAGraph.cpp:208.)
+  super().capture_end()
+[Generator] Custom decode graph captured for session s1 at seq_len=7
+[JIT Client] Stopping...
+[JIT Client] Stopped
+================================================================================
+CASE 4 (Custom decode graph): generation timing
+================================================================================
+Total time for 5 token generation: 5.38 ms
+Tokens/sec: 929.26
+--------------------------------------------------------------------------------
+Generated output:
+the future of artificial intelligence isografiaografiaografiaografiaografia

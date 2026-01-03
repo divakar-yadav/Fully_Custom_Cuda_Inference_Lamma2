@@ -1,0 +1,28 @@
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.50it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.75it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.65it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Packing fused weights (QKV) to persistent device buffers...
+[Generator] Packed weights: num_layers=32
+[Generator] Custom decode module: loaded
+[Generator] Ready!
+
+[Generator] Ready! Graph generator enabled!
+
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 313, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 284, in main
+    total_ms, tps, text = generate_tokens(args.model_name, args.input_text, args.max_new_tokens)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 219, in generate_tokens
+    raise RuntimeError(f"custom_generate failed: {gresp.get('error')}")
+RuntimeError: custom_generate failed: custom graph not captured or KV not initialized

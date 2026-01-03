@@ -1,0 +1,51 @@
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.46it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.71it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.62it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Custom decode module: loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x21061660
+  Capture:  0x226771c0
+  Transfer: 0x2267ee30
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.6s, ETA: 23.2s)
+[Generator] Progress: 100/150 (23.1s, ETA: 11.6s)
+[Generator] Progress: 150/150 (33.7s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (33.7s)
+[Generator] Ready! Graph generator enabled!
+
+[Replay] ✓ seq_len=50 (ahead=100, buffer=107)
+[Replay] ✓ seq_len=100 (ahead=50, buffer=57)
+[Replay] ✓ seq_len=150 (ahead=0, buffer=7)
+[Replay] ✓ seq_len=200 (ahead=0, buffer=7)
+[Replay] ✓ seq_len=250 (ahead=0, buffer=7)
+[Replay] ✓ seq_len=300 (ahead=0, buffer=7)
+[Replay] ✓ seq_len=350 (ahead=0, buffer=7)
+[Replay] ✓ seq_len=400 (ahead=0, buffer=7)
+[Replay] ✓ seq_len=450 (ahead=0, buffer=7)
+[Replay] ✓ seq_len=500 (ahead=0, buffer=7)
+[JIT Client] Stopping...
+[JIT Client] Stopped
+================================================================================
+CASE 4 (CUDA Graphs + JIT IPC): generation timing
+================================================================================
+Total time for 500 token generation: 101612.88 ms
+Tokens/sec: 4.92
+--------------------------------------------------------------------------------
+Generated output:
+the future of artificial intelligence is in the hands of the people
+The future of artificial intelligence is in the hands of the people.
+The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the

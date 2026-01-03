@@ -1,0 +1,128 @@
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+[Generator] ERROR: Using `bitsandbytes` 8-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/case4_graph_generator_server_ipc.py", line 600, in graph_generator_process
+    generator = GraphGenerator(
+                ^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/case4_graph_generator_server_ipc.py", line 101, in __init__
+    self.model = AutoModelForCausalLM.from_pretrained(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 600, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/modeling_utils.py", line 311, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4648, in from_pretrained
+    hf_quantizer.validate_environment(
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/quantizers/quantizer_bnb_8bit.py", line 73, in validate_environment
+    raise ImportError(
+ImportError: Using `bitsandbytes` 8-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 170, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 141, in main
+    total_ms, tps, text = generate_tokens(args.model_name, args.input_text, args.max_new_tokens)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 80, in generate_tokens
+    raise RuntimeError("Timeout waiting for case4 processes to be ready")
+RuntimeError: Timeout waiting for case4 processes to be ready
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.24it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.39it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.55it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Ready!
+
+[Generator] Ready! Graph generator enabled!
+
+[JIT Client] Stopping...
+[JIT Client] Stopped
+================================================================================
+CASE 4 (CUDA Graphs + JIT IPC): generation timing
+================================================================================
+Total time for 500 token generation: 9372.07 ms
+Tokens/sec: 53.35
+--------------------------------------------------------------------------------
+Generated output:
+the future of artificial intelligence isomorphic to the future of humanity
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of humanity is isomorphic to the future of artificial intelligence.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of humanity is isomorphic to the future of artificial intelligence.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of humanity is isomorphic to the future of artificial intelligence.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of humanity.
+The future of artificial intelligence is isomorphic to the future of
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+[Generator] ERROR: Using `bitsandbytes` 8-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/case4_graph_generator_server_ipc.py", line 600, in graph_generator_process
+    generator = GraphGenerator(
+                ^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/case4_graph_generator_server_ipc.py", line 101, in __init__
+    self.model = AutoModelForCausalLM.from_pretrained(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 600, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/modeling_utils.py", line 311, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4648, in from_pretrained
+    hf_quantizer.validate_environment(
+  File "/home/azureuser/.local/lib/python3.12/site-packages/transformers/quantizers/quantizer_bnb_8bit.py", line 73, in validate_environment
+    raise ImportError(
+ImportError: Using `bitsandbytes` 8-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 170, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 141, in main
+    total_ms, tps, text = generate_tokens(args.model_name, args.input_text, args.max_new_tokens)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/generate_500_tokens.py", line 80, in generate_tokens
+    raise RuntimeError("Timeout waiting for case4 processes to be ready")
+RuntimeError: Timeout waiting for case4 processes to be ready

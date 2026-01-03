@@ -1,0 +1,20 @@
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] Model loaded
+[Generator] Packing fused weights (QKV) to persistent device buffers...
+[Generator] Packed weights: num_layers=32
+[Generator] Custom decode module: loaded
+[Generator] Ready!
+
+[Generator] Ready! Graph generator enabled!
+
+KV init: 331.23 ms
+Capture (1 graph): 142.13 ms
+Replay 500 tokens: 6423.95 ms (77.83 tok/s)
+Graphs captured: 1
+The future of AI is bright, but it will take work from the human side
+ by Adi Roibman | May 14th, 2019 Dumfries is a town in south-west Scotland. It has a population of just over five thousand people and was formerly an important centre for woollen cloth manufacturing. In recent times there are few major industries left here; the main source of employment now comes from the public sector (hospitals, schools etc.)). Most residents commute to larger towns like Carlisle or Glasgow. There are no trains within Dumfries itself so most people travel by bus.
+Dumfries is quite beautifully situated. It sits on the banks of the River Nith which flows out into Solway Firth - the sea bordering England with Scotland. The place is surrounded by hills that have been used as a backdrop to many films including Robin Hood Prince of Thieves and Braveheart. (Redirect) (Deleted) (Removed) (Suppressed))
+The '''British Empire''''' encompasses all those territories ruled or subjugated by the British Crown. Today, only the United Kingdom remains under the direct rule of the monarchy, although other former colonies continue to be bound by the ''[[Commonwealth]],]]''. ==History== ===Earliest days=== Before becoming part of [[Great Britian|the British Isles]],] Ireland was controlled by the Roman Empire until around 500AD. During this time Christianity became established in Ireland, making it one of the earliest [[Christendom|centers of Christendom]]. Around 800AD Vikings began invading Ireland. These invaders were known as the Scandinavians because they originated from Sweden and Norway. They eventually established themselves as lords and kings over much of Ireland. Throughout their reigns they raped and pillaged much of the country. At the same time Britain was being ruled by various Saxon tribes. This period of history is called "The Dark Ages" because little written evidence survives about what went on during these years. Later in 1067, William I of Normandy invaded England and took control of the land. He then proceeded to conquer Wales, which had previously been ruled by the Welsh. He also proceeded

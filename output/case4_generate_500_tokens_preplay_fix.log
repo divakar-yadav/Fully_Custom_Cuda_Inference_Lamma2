@@ -1,0 +1,80 @@
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.32it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.46it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.70it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.61it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x3dbbda50
+  Capture:  0x3f1d6290
+  Transfer: 0x3dbb2650
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.7s, ETA: 23.5s)
+[Generator] Progress: 100/150 (23.3s, ETA: 11.6s)
+[Generator] Progress: 150/150 (34.7s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.7s)
+[Generator] Ready! Graph generator enabled!
+
+[Replay] ✓ seq_len=50 (ahead=100, buffer=107)
+[Replay] ✓ seq_len=100 (ahead=50, buffer=57)
+[Generator] ERROR: 'NoneType' object has no attribute 'join'
+[JIT Client] Stopping...
+[JIT Client] Stopped
+Traceback (most recent call last):
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/case4_graph_generator_server_ipc.py", line 618, in graph_generator_process
+    generator.cleanup()
+  File "/home/azureuser/divakar_projects/cuda_graph_sharing/case4_ipc_20250130/case4_graph_generator_server_ipc.py", line 581, in cleanup
+    self.capture_thread.join(timeout=1.0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'join'
+terminate called after throwing an instance of 'c10::Error'
+  what():  CUDA error: invalid device context
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at ../c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x7fcc3596c446 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::string const&) + 0x64 (0x7fcc359166e4 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x118 (0x7fcc35e01a18 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libc10_cuda.so)
+frame #3: <unknown function> + 0x10219ec (0x7fcbeb2219ec in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x102a735 (0x7fcbeb22a735 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0x5fc5b0 (0x7fcc345fc5b0 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so)
+frame #6: <unknown function> + 0x6f69f (0x7fcc3594d69f in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #7: c10::TensorImpl::~TensorImpl() + 0x21b (0x7fcc3594637b in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #8: c10::TensorImpl::~TensorImpl() + 0x9 (0x7fcc35946529 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #9: <unknown function> + 0x8ca268 (0x7fcc348ca268 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so)
+frame #10: THPVariable_subclass_dealloc(_object*) + 0x2e0 (0x7fcc348ca5d0 in /home/azureuser/divakar_projects/cuda_graph_sharing/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so)
+frame #11: python() [0x5796e2]
+frame #12: python() [0x59ea69]
+frame #13: python() [0x5f7071]
+frame #14: python() [0x5e2a34]
+<omitting python frames>
+frame #17: python() [0x59da4f]
+frame #18: python() [0x599513]
+frame #22: python() [0x607fc2]
+frame #23: python() [0x6b4393]
+frame #28: <unknown function> + 0x2a1ca (0x7fcc3682a1ca in /usr/lib/x86_64-linux-gnu/libc.so.6)
+frame #29: __libc_start_main + 0x8b (0x7fcc3682a28b in /usr/lib/x86_64-linux-gnu/libc.so.6)
+
+================================================================================
+CASE 4 (CUDA Graphs + JIT IPC): generation timing
+================================================================================
+Total time for 100 token generation: 2766.53 ms
+Tokens/sec: 36.15
+--------------------------------------------------------------------------------
+Generated output:
+the future of artificial intelligence is in the hands of the people
+The future of artificial intelligence is in the hands of the people.
+The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The

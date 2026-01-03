@@ -1,0 +1,6 @@
+kv_init_ms,capture_ms,replay_ms,tok_s,graphs_captured,steps,prompt
+331.23,142.13,6423.95,77.83,1,500,"The future of AI is"
+328.33,103.42,0.00,0.00,exact-seq-bg,500,"The future of AI is"
+329.12,107.58,0.00,0.00,exact-seq-bg,500,"The future of AI is"
+327.19,100.14,0.00,0.00,exact-seq-bg,500,"The future of AI is"
+328.87,100.50,0.00,0.00,exact-seq-bg,500,"The future of AI is"

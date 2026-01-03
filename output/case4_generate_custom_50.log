@@ -1,0 +1,24 @@
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] Model loaded
+[Generator] Packing fused weights (QKV) to persistent device buffers...
+[Generator] Packed weights: num_layers=32
+[Generator] Custom decode module: loaded
+[Generator] Ready!
+
+[Generator] Ready! Graph generator enabled!
+
+READY: {'status': 'ready', 'process': 'graph_generator'}
+KV_INIT: <class 'dict'> success
+[DevGraph Capture Thread] Started (custom exact-seq)
+BG_CAPTURE_START: {'status': 'success'}
+[DevGraph Custom Capture] ✓ seq_len=50
+[DevGraph Custom Capture] ✓ seq_len=100
+[DevGraph Custom Capture] ✓ seq_len=150
+PRECATURE_READY: {'status': 'success', 'start_seq': 7, 'target_seq': 157}
+BG_CAPTURE_STOP: {'status': 'success'}
+REPLAY50: error elapsed_ms= None
+[DevGraph Custom Capture] ✓ seq_len=200
+[DevGraph Capture Thread] Stopped

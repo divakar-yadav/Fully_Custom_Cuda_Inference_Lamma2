@@ -1,0 +1,17 @@
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] Model loaded
+[Generator] Packing fused weights (QKV) to persistent device buffers...
+[Generator] Packed weights: num_layers=32
+[Generator] Custom decode module: loaded
+[Generator] Ready!
+
+[Generator] Ready! Graph generator enabled!
+
+KV init: 328.87 ms
+Capture (initial exact graph): 100.50 ms
+Replay 500 tokens (exact-seq graphs): 0.00 ms (0.00 tok/s)
+Graphs captured: multiple (exact-seq, background)
+The future of AI is

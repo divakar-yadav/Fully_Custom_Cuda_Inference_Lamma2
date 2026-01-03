@@ -1,0 +1,22 @@
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: KV-only
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.59it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.85it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.76it/s]
+[Generator] Model loaded
+[Generator] Custom decode module: loaded
+[Generator] Ready!
+
+[Generator] Ready! Graph generator enabled!
+
+[LIVE] READY: {'status': 'ready', 'process': 'graph_generator'}
+[LIVE] step=1 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.0006286382558755577, 'k_mean': -0.0011897450312972069, 'v_mean': 0.00010128345456905663}}
+[LIVE] step=2 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.000806060095783323, 'k_mean': 0.0008809153223410249, 'v_mean': 0.0004286658368073404}}
+[LIVE] step=3 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.001342101371847093, 'k_mean': 0.0034212255850434303, 'v_mean': 0.0002360225626034662}}
+[LIVE] step=4 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.0009967279620468616, 'k_mean': -0.00015054771210998297, 'v_mean': -0.0003879748401232064}}
+[LIVE] step=5 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.0009396013338118792, 'k_mean': 0.00019802508177235723, 'v_mean': -0.00010742394078988582}}
+[LIVE] step=6 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.00114883529022336, 'k_mean': 0.0006849782075732946, 'v_mean': 1.6850026440806687e-05}}
+[LIVE] step=7 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.0007570654852315784, 'k_mean': 0.0014179102145135403, 'v_mean': -0.00032020456274040043}}
+[LIVE] step=8 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.0010717192199081182, 'k_mean': 0.0009441265719942749, 'v_mean': -2.187257632613182e-05}}
+[LIVE] step=9 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.001296497299335897, 'k_mean': 0.0004969515139237046, 'v_mean': -4.4074258767068386e-05}}
+[LIVE] step=10 resp={'status': 'success', 'stats': {'hidden': 4096, 'q_mean': -0.0013268269831314683, 'k_mean': 0.0015736918430775404, 'v_mean': -0.00033404576242901385}}

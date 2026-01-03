@@ -1,0 +1,100 @@
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.34it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.47it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.69it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.61it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x2ea1bf20
+  Capture:  0x323597a0
+  Transfer: 0x323501b0
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.7s, ETA: 23.3s)
+[Generator] Progress: 100/150 (23.1s, ETA: 11.6s)
+[Generator] Progress: 150/150 (34.8s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.8s)
+[Generator] Ready! Graph generator enabled!
+
+[Replay] ✓ seq_len=50 (ahead=100, buffer=107)
+[JIT Client] Stopping...
+[JIT Client] Stopped
+================================================================================
+CASE 4 (CUDA Graphs + JIT IPC): generation timing
+================================================================================
+Total time for 50 token generation: 1445.41 ms
+Tokens/sec: 34.59
+--------------------------------------------------------------------------------
+Generated output:
+the future of artificial intelligence is in the hands of the people
+The future of artificial intelligence is in the hands of the people.
+The future of artificial intelligence is in the hands of the people. The future of artificial intelligence is in the hands of the people. The future of
+[JIT Client] ===== JIT PREPROCESSING CLIENT PROCESS =====
+[JIT Client] Loading tokenizer: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[Generator] ===== CUDA GRAPH GENERATOR SERVER PROCESS =====
+[Generator] ===== CUDA GRAPH GENERATOR SERVER =====
+[Generator] Strategy: CUDA graphs (no JIT)
+[Generator] Pre-capture: 150 graphs
+[Generator] Ahead buffer: 150 graphs
+[Generator] Loading model: /home/azureuser/divakar_projects/cuda_graph_sharing/latest_case5/llama2_hf_local
+[JIT Client] Ready!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.45it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.67it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.59it/s]
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+[Generator] Model loaded
+[Generator] Initializing C++ streams...
+[SimpleConcurrentManager] Created streams:
+  Replay:   0x8103710
+  Capture:  0xba50ab0
+  Transfer: 0xba50910
+[Generator] C++ streams ready
+[Generator] Ready!
+
+[Generator] Pre-capturing 150 graphs...
+[Generator] Progress: 50/150 (11.7s, ETA: 23.4s)
+[Generator] Progress: 100/150 (23.1s, ETA: 11.5s)
+[Generator] Progress: 150/150 (34.5s, ETA: 0.0s)
+[Generator] ✓ 150 graphs ready (34.5s)
+[Generator] Starting background ahead-capture thread...
+[Capture Thread] Started - continuous ahead capture (parallel)
+[Generator] Ready! Graph generator enabled!
+
+[W1104 23:08:53.623470651 CUDAGraph.cpp:298] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+
+[Capture] ⚠️  WARNING: CUDA allocator corruption at seq_len=151 (retry 1/5)
+[Capture]    Error type: CUDA internal assert/captures_underway - attempting recovery...
+
+[Capture] ⚠️  WARNING: CUDA allocator corruption at seq_len=151 (retry 2/5)
+[Capture]    Error type: CUDA internal assert/captures_underway - attempting recovery...
+
+[Capture] ⚠️  WARNING: CUDA allocator corruption at seq_len=151 (retry 3/5)
+[Capture]    Error type: CUDA internal assert/captures_underway - attempting recovery...
+[Replay] ✓ seq_len=50 (ahead=100, buffer=107)
+
+[Capture] ⚠️  WARNING: CUDA allocator corruption at seq_len=151 (retry 4/5)
+[Capture]    Error type: CUDA internal assert/captures_underway - attempting recovery...
+
+[Capture] ⚠️  WARNING: CUDA allocator corruption at seq_len=151 (retry 5/5)
+[Capture]    Error type: CUDA internal assert/captures_underway - attempting recovery...
+[Replay] ✓ seq_len=100 (ahead=50, buffer=57)
+[JIT Client] Stopping...
+[JIT Client] Stopped
+[Capture] 🔄 Final recovery attempt for seq_len=151...
+================================================================================
+CASE 4 (CUDA Graphs + JIT IPC): generation timing
+================================================================================
+Total time for 100 token generation: 5598.01 ms
+Tokens/sec: 17.86
+--------------------------------------------------------------------------------
+Generated output:
+the future of artificial intelligence is in the
