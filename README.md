@@ -1,3 +1,7 @@
+# Fully_Custom_Cuda_Inference_Lamma2
+
+This repository contains a fully custom CUDA inference implementation for LLaMA2 using custom kernels with minimal Python dependencies. The inference computation is 100% custom (no HuggingFace model forward pass), using direct CUDA kernels for all operations.
+
 ## Case4: Custom CUDA Decode + Concurrent CUDA Graph Capture/Replay
 
 ### Overview
@@ -280,6 +284,5 @@ python3 case4_combined_ipc_orchestrator.py \
 
 - Python 3.x
 - PyTorch with CUDA
-- transformers
+- transformers (only for tokenizer and config reading)
 - concurrent_capture_replay_simple (C++ CUDA extension)
-
